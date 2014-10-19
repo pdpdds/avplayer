@@ -722,7 +722,7 @@ int av_start(avplay *play, double fact, int index)
 	pthread_attr_init(&attr);
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 
-	/* 创建线程. */
+	//쓰레드 생성
 	ret = pthread_create(&play->m_read_pkt_thrd, &attr, read_pkt_thrd,
 		(void*) play);
 	if (ret)

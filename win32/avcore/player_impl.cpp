@@ -121,7 +121,7 @@ player_impl *win_data::lookup_window(HWND hwnd)
 	return NULL;
 }
 
-static uint64_t file_size(LPCTSTR filename)
+static int64_t file_size(LPCTSTR filename)
 {
 	WIN32_FILE_ATTRIBUTE_DATA fad = { 0 };
 
@@ -788,7 +788,7 @@ BOOL player_impl::open(const char *movie, int media_type, int render_type)
 
 	strcpy(filename, movie);
 
-	uint64_t file_lentgh = 0;
+	int64_t file_lentgh = 0;
 	if (media_type == MEDIA_TYPE_FILE || media_type == MEDIA_TYPE_BT)
 	{
 		file_lentgh = file_size(movie);
@@ -896,7 +896,7 @@ BOOL player_impl::open(const char *movie, int media_type, int render_type)
 			m_media_list.insert(std::make_pair(filename, filename));
 		}
 
-		// 初始化avplay.
+		// avplay 초기화.
 		if (initialize(m_avplay, m_source) != 0)
 		{
 			::logger("initialize avplay failed!\n");

@@ -56,14 +56,14 @@ int main(int argc, char* argv[])
 	}
 
 	// 设置语言环境为"中文".
-	setlocale(LC_ALL, "chs");
+	setlocale(LC_ALL, "");
 
 	// 创建播放器.
 	avplayer win;
 	if (win.create_window("main") == NULL)
 		return -1;
 
-	// 判断打开的媒体类型, 根据媒体文件类型选择不同的方式打开.
+	//미디어 유형을 판별해서	미디어 파일을 여는 방법을 선택한다.
 	filename = std::string(argv[1]);
 	std::string ext = extension<std::string>(filename);
 	if (ext == ".torrent")
