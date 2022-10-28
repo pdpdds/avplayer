@@ -6,3 +6,7 @@
 avplayer.exe <파일이름|URL|TORRENT>
 
 디버그 : http://ffmpeg.zeranoe.com/builds/win32/shared/ 에서 FFMPEG 관련 파일을 받고 압축을 푼후 dll 파일들을 디버깅 폴더로 복사해서 디버깅
+
+## Required
+* DirectX 9.0 SDK (June 2010)
+* Boost 1.56
